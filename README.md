@@ -109,7 +109,7 @@ CLAUDE_API_KEY =
 
 <div align="center"><h2>Acknowledgements</h2></div>
 
-&emsp;&emsp;***I would like to express my sincere gratitude to Dr. Hua Chen for his invaluable guidance and supports throughout the development of this project. His expertise and insightful feedback played a crucial role in shaping the direction of the project.***
+&emsp;&emsp;***I would like to express my sincere gratitude to Dr. Hua Cheng for his invaluable guidance and supports throughout the development of this project. His expertise and insightful feedback played a crucial role in shaping the direction of the project.***
 
 
 
