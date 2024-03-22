@@ -11,8 +11,8 @@ from langchain.document_loaders import PyMuPDFLoader
 from langchain.vectorstores import Chroma
 
 # 首先实现基本配置
-DEFAULT_DB_PATH = "C:\\Users\YUI\PycharmProjects\TabLLM-Copilot\database\laws_knowledgebase"
-DEFAULT_PERSIST_PATH = "C:\\Users\YUI\PycharmProjects\TabLLM-Copilot\database\chromadb\laws_vertordb_openai"
+DEFAULT_DB_PATH = "C:\\Users\YUI\PycharmProjects\ChatLaw\database\laws_knowledgebase"
+DEFAULT_PERSIST_PATH = "C:\\Users\YUI\PycharmProjects\ChatLaw\database\chromadb\laws_vertordb_openai"
 
 
 def get_files(dir_path):
