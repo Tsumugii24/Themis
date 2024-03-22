@@ -52,7 +52,7 @@ class Model_Center():
         """
         调用带历史记录的问答链进行回答
         """
-        if question == None or len(question) < 1:
+        if question is None or len(question) < 1:
             return "", chat_history
         try:
             if (model, embedding) not in self.chat_qa_chain_self:
@@ -72,7 +72,7 @@ class Model_Center():
         """
         调用不带历史记录的问答链进行回答
         """
-        if question == None or len(question) < 1:
+        if question is None or len(question) < 1:
             return "", chat_history
         try:
             if (model, embedding) not in self.qa_chain_self:
@@ -167,24 +167,24 @@ with block as demo:
             chatbot = gr.Chatbot(height=400, show_copy_button=True, show_share_button=True,
                                  avatar_images=(EXAMPLE_AVATAR_PATH, EXTRA_AVATAR_PATH))
             # 创建一个文本框组件，用于输入 prompt。
-            msg = gr.Textbox(label="your question", placeholder="Type your message here...",)
+            msg = gr.Textbox(label="your question", placeholder="Type your message here...", )
 
             with gr.Row():
                 # 创建提交按钮。
-                db_with_his_btn = gr.Button("Chat db with history")
-                db_wo_his_btn = gr.Button("Chat db without history")
-                llm_btn = gr.Button("Chat with llm")
+                db_with_his_btn = gr.Button("Chat DB with history")
+                db_wo_his_btn = gr.Button("Chat DB without history")
+                llm_btn = gr.Button("Chat with LLM")
             with gr.Row():
                 # 创建一个清除按钮，用于清除聊天机器人组件的内容。
                 clear = gr.ClearButton(
-                    components=[chatbot], value="Clear console")
+                    components=[chatbot], value="Clear Console")
 
         with gr.Column(scale=1):
-            file = gr.File(label='knowledge base uploading', file_count='directory',
+            file = gr.File(label='Knowledgebase Uploading', file_count='directory',
                            file_types=['.txt', '.md', '.docx', '.pdf'])  # todo .jpg .png .jpeg的添加和处理
             with gr.Row():
-                init_db = gr.Button("documents vectorization")
-            model_argument = gr.Accordion("parameter configuration", open=False)
+                init_db = gr.Button("Documents Vectorization")
+            model_argument = gr.Accordion("Parameter Configuration", open=False)
             with model_argument:
                 temperature = gr.Slider(0,
                                         1,
@@ -197,7 +197,7 @@ with block as demo:
                                   10,
                                   value=3,
                                   step=1,
-                                  label="vector db search top k",
+                                  label="vectordb search top k",
                                   interactive=True)
 
                 history_len = gr.Slider(0,
