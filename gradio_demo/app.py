@@ -23,10 +23,10 @@ INIT_EMBEDDING_MODEL = "openai"
 # 关于法律问题的本地知识库和向量数据库的默认路径
 DEFAULT_DB_PATH = "../../database/laws_knowledgebases"
 DEFAULT_PERSIST_PATH = "../../database/chromadb/laws_vectordb_openai"
-AIGC_AVATAR_PATH = "logo.png"
-DATAWHALE_AVATAR_PATH = "logo.png"
-AIGC_LOGO_PATH = "logo.png"
-DATAWHALE_LOGO_PATH = "logo.png"
+EXAMPLE_AVATAR_PATH = "logo.png"
+EXTRA_AVATAR_PATH = "logo.png"
+EXAMPLE_LOGO_PATH = "logo.png"
+EXTRA_LOGO_PATH = "logo.png"
 
 
 def get_model_by_platform(platform):
@@ -152,20 +152,20 @@ model_center = Model_Center()
 block = gr.Blocks()
 with block as demo:
     with gr.Row(equal_height=True):
-        gr.Image(value=AIGC_LOGO_PATH, scale=1, min_width=10, show_label=False, show_download_button=False,
+        gr.Image(value=EXAMPLE_LOGO_PATH, scale=1, min_width=10, show_label=False, show_download_button=False,
                  container=False)
 
         with gr.Column(scale=2):
             gr.Markdown("""<h1><center>ChatLaw</center></h1>
                 <h3><center>Maintained by Tsumugii https://github.com/Tsumugii24/ChatLaw 😊</center></h3>
                 """)
-        gr.Image(value=DATAWHALE_LOGO_PATH, scale=1, min_width=10, show_label=False, show_download_button=False,
+        gr.Image(value=EXTRA_LOGO_PATH, scale=1, min_width=10, show_label=False, show_download_button=False,
                  container=False)
 
     with gr.Row():
         with gr.Column(scale=4):
             chatbot = gr.Chatbot(height=400, show_copy_button=True, show_share_button=True,
-                                 avatar_images=(AIGC_AVATAR_PATH, DATAWHALE_AVATAR_PATH))
+                                 avatar_images=(EXAMPLE_AVATAR_PATH, EXTRA_AVATAR_PATH))
             # 创建一个文本框组件，用于输入 prompt。
             msg = gr.Textbox(label="your question", placeholder="Type your message here...",)
 
@@ -251,7 +251,7 @@ gr.close_all()
 # todo 编码问题 gbk / 使用ignore errors之后路径解析存在问题
 demo.launch(inbrowser=True,  # 自动打开默认浏览器
             share=False,  # 项目暂不共享，其他设备目前不能访问
-            favicon_path="C:\\Users\YUI\PycharmProjects\TabLLM-Copilot\doc\favicons\favicon.ico",  # 网页图标
+            favicon_path="C:\\Users\YUI\PycharmProjects\ChatLaw\doc\favicons\favicon.ico",  # 网页图标
             show_error=True,  # 在浏览器控制台中显示错误信息
             quiet=True,  # 禁止大多数打印语句
             )
