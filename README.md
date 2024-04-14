@@ -1,4 +1,4 @@
-<div align="center"><h1>ChatLaw</h1></div>
+<div align="center"><h1>Themis</h1></div>
 
 </div>
 
